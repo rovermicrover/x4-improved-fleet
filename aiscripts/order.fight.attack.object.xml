@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-  <add sel="/aiscript[@name='order.fight.attack.object']/attention[@min='unknown']/actions/do_if[6]/do_if[2]/do_if[4]/do_else/do_for_each[@name='$locsub']/do_if[@value='($locsub.assignment == assignment.attack) and not $locsub.subordinategroupdockoverride']/create_order[@object='$locsub']" pos="before">
+  <add sel="//aiscript/attention[@min='unknown']/actions/do_if[@value='this.defensible.exists']/do_if[@value='$Defensible.isclass.ship']/do_if[@value='this.assignedcontrolled.subordinates.count and this.$escortgroup?']/do_else/do_for_each/do_if[@value='($locsub.assignment == assignment.attack) and not $locsub.subordinategroupdockoverride']/create_order" pos="before">
     <!-- If only have one order and its to dock at its commander attempt to cancel it and attack instead -->
     <debug_text text="'ATTACK ORDER: Checking if we should cancel docking order to attack. Order count %s and orderId %s'.[$locsub.orders.count, $locsub.order.id]" chance="$debugchance"/>
     <do_if value="$locsub.orders.count == 1 and $locsub.order.id == 'DockAt' and $locsub.order.$destination == $locsub.commander">
