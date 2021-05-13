@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content name="Improved Fleet Attack" description="Escorts assigned to attack will now stop waiting to dock if given an attack order via their fleet." author="RoverTX" version="100" date="2021-05-13">
+  <text language="44" name="Improved Fleet Attack" description="Escorts assigned to attack will now stop waiting to dock if given an attack order via their fleet." author="RoverTX"/>
+</content>

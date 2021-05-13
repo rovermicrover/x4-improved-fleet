@@ -1,0 +1,1 @@
+Escorts assigned to attack will now stop waiting to dock if given an attack order via their fleet.

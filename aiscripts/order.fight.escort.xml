@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/aiscript[@name='order.fight.escort']/interrupts/library/actions[@name='CreateAttackOrder']/do_elseif[@value='@$enemy.canbeattacked']/set_value[@name='$internalordercalled']" pos="before">
+    <!-- If only have one order and its to dock at its commander attempt to cancel it and attack instead -->
+    <debug_text text="'ESCORT ORDER: Checking if we should cancel docking order to attack. Order count %s and orderId %s'.[this.assignedcontrolled.orders.count, this.assignedcontrolled.order.id]" chance="$debugchance"/>
+    <do_if value="this.assignedcontrolled.orders.count == 1 and this.assignedcontrolled.order.id == 'DockAt' and this.assignedcontrolled.order.$destination == this.assignedcontrolled.commander">
+      <cancel_order order="this.assignedcontrolled.order"/>
+    </do_if>
+  </add>
+</diff>
